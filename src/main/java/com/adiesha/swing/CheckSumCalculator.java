@@ -70,7 +70,7 @@ public class CheckSumCalculator {
         return fileInputStream;
     }
 
-    public static void parseByteToHexFormat(byte[] input) {
+    public static String parseByteToHexFormat(byte[] input) {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < input.length; i++) {
             System.out.println(input[i]);
@@ -78,5 +78,6 @@ public class CheckSumCalculator {
         }
         System.out.println("Hex Format: " + sb.toString());
         System.out.println("Hex Format: " + DatatypeConverter.printHexBinary(input));
+        return sb.toString();
     }
 }

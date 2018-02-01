@@ -10,7 +10,7 @@ import java.io.File;
 
 public class ActionListenerJMenuItemOpen implements ActionListener {
     public void actionPerformed(ActionEvent e) {
-        JFileChooser jfc = new JFileChooser();
+        JFileChooser jfc = new JFileChooser("E:\\Apps\\datagrip-2017.3.4.exe");
         int i = jfc.showOpenDialog((Component) e.getSource());
         if (i == JFileChooser.APPROVE_OPTION) {
             File f = jfc.getSelectedFile();
