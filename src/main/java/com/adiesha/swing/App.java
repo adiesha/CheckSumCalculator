@@ -14,16 +14,13 @@ public class App {
 
     public static void main(String[] args) throws IOException {
 
-
-        System.out.println("Hello World!");
-
         JFrame f = new JFrame();
         JMenuBar mb = new JMenuBar();
         JMenu jm = new JMenu("File");
         JMenuItem open = new JMenuItem("Open");
         JMenuItem exit = new JMenuItem("Exit");
         JLabel filePathLabel = new JLabel("File Path");
-        JLabel filePath = new JLabel("E:\\Apps\\datagrip-2017.3.4.exe");
+        JLabel filePath = new JLabel();
         JLabel expectedHashLabel = new JLabel("Expected Hash");
         JLabel outputHashLabel = new JLabel("Output Hash");
         JLabel outputHash = new JLabel("");
@@ -39,7 +36,7 @@ public class App {
         filePath.setBounds(120, 15, 200, 30);
         hashTextField.setBounds(120, 45, 450, 30);
         outputHash.setBounds(120, 75, 450, 30);
-        outputComparision.setBounds(120, 105, 300, 30);
+        outputComparision.setBounds(120, 105, 450, 30);
 
 
         f.add(filePathLabel);
@@ -57,7 +54,7 @@ public class App {
 
         jb.addActionListener(new ActionListenerJButtonClick(CheckSumCalculator.getInstance(), outputHash, outputComparision, hashTextField));
         exit.addActionListener(new ActionListenerJMenuItemExit());
-        open.addActionListener(new ActionListenerJMenuItemOpen());
+        open.addActionListener(new ActionListenerJMenuItemOpen(filePath));
         f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         f.addWindowListener(new ActionListenerJFrame(f));
         f.setJMenuBar(mb);

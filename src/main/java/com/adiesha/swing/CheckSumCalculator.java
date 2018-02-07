@@ -73,7 +73,6 @@ public class CheckSumCalculator {
     public static String parseByteToHexFormat(byte[] input) {
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < input.length; i++) {
-            System.out.println(input[i]);
             sb.append(Integer.toString((input[i] & 0xff) + 0x100, 16).substring(1));
         }
         System.out.println("Hex Format: " + sb.toString());
